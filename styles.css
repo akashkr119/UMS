@@ -237,6 +237,28 @@ h1 {
   gap: 1.2rem;
 }
 
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.notice-box {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 1.4rem;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(19, 106, 138, 0.08);
+}
+
+.notice-box p + p {
+  margin-top: 0.7rem;
+}
+
+.highlight-card h3 {
+  margin-bottom: 0.5rem;
+}
+
 .card h3 {
   margin-bottom: 0.6rem;
   color: var(--secondary);
@@ -275,6 +297,7 @@ footer {
   .about-grid,
   .contact-grid,
   .card-grid,
+  .highlights-grid,
   .stats {
     grid-template-columns: 1fr;
   }
