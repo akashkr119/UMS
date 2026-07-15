@@ -1,13 +1,13 @@
 :root {
-  --primary: #16708a;
-  --secondary: #0b3a47;
-  --accent: #f2b84b;
-  --accent-2: #2cc5b7;
-  --text: #16202a;
-  --muted: #64748b;
-  --bg: #f6fbfd;
+  --primary: #0f6b3b;
+  --secondary: #0c4a2f;
+  --accent: #f4b400;
+  --accent-2: #1f5f9e;
+  --text: #1d2a2f;
+  --muted: #5d6b73;
+  --bg: #f7fbf8;
   --white: #ffffff;
-  --shadow: 0 16px 42px rgba(11, 58, 71, 0.12);
+  --shadow: 0 16px 42px rgba(12, 74, 47, 0.12);
 }
 
 * {
@@ -24,7 +24,7 @@ body {
   font-family: 'Inter', sans-serif;
   line-height: 1.75;
   color: var(--text);
-  background: linear-gradient(180deg, #fdfefe 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #fcfefc 0%, var(--bg) 100%);
 }
 
 img {
@@ -112,7 +112,7 @@ a {
   letter-spacing: 0.24em;
   font-size: 0.8rem;
   font-weight: 700;
-  color: #9bd2e2;
+  color: #dcefdc;
   margin-bottom: 0.7rem;
 }
 
@@ -156,7 +156,7 @@ h1 {
 .btn-primary {
   background: var(--accent);
   color: var(--secondary);
-  box-shadow: 0 10px 24px rgba(244, 185, 66, 0.28);
+  box-shadow: 0 10px 24px rgba(244, 180, 0, 0.28);
 }
 
 .btn-secondary {
@@ -171,14 +171,14 @@ h1 {
   border-radius: 22px;
   box-shadow: var(--shadow);
   padding: 1.35rem;
-  border: 1px solid rgba(22, 112, 138, 0.08);
+  border: 1px solid rgba(15, 107, 59, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-card:hover,
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 18px 44px rgba(11, 58, 71, 0.16);
+  box-shadow: 0 18px 44px rgba(12, 74, 47, 0.16);
 }
 
 .hero-card ul,
@@ -310,7 +310,7 @@ footer {
   text-align: center;
   padding: 1.8rem 1rem 2.5rem;
   color: var(--muted);
-  border-top: 1px solid rgba(19, 106, 138, 0.08);
+  border-top: 1px solid rgba(15, 107, 59, 0.08);
   margin-top: 1rem;
   font-size: 0.95rem;
 }
