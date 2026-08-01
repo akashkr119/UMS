@@ -9,21 +9,28 @@ if (toggle && navLinks) {
     const isOpen = navLinks.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(isOpen));
   });
+
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
 }
 
-if (year) {
-  year.textContent = new Date().getFullYear();
-}
+if (year) year.textContent = new Date().getFullYear();
 
 if (contactForm && formStatus) {
   contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    formStatus.textContent = 'Sending...';
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    formStatus.textContent = 'Sending your enquiry...';
+    if (submitButton) submitButton.disabled = true;
 
     const payload = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      message: document.getElementById('message').value
+      name: document.getElementById('name').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      message: document.getElementById('message').value.trim()
     };
 
     try {
@@ -32,12 +39,14 @@ if (contactForm && formStatus) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
-
-      const result = await response.json();
-      formStatus.textContent = result.message || 'Message sent successfully.';
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.message || 'Request failed');
+      formStatus.textContent = result.message || 'Thank you. Your enquiry has been sent.';
       contactForm.reset();
     } catch (error) {
-      formStatus.textContent = 'Unable to send message right now.';
+      formStatus.textContent = 'The online enquiry service is currently unavailable. Please visit the school for assistance.';
+    } finally {
+      if (submitButton) submitButton.disabled = false;
     }
   });
 }
