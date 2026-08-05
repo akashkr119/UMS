@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://akashkr119.github.io/UMS/sitemap.xml
